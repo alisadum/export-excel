@@ -15,7 +15,6 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('users/export/', [UsersController::class, 'export']);
+Route::get('/', [UsersController::class, 'index']);
+Route::post('/', [UsersController::class, 'store'])->name('users.store');
+Route::get('users/export', [UsersController::class, 'export']);
